@@ -20,7 +20,7 @@ class MatrixPerlinBackground {
         
         // Объединяем все категории
         this.chars = Object.values(this.categories).join('');
-        this.fontSize = 12;
+        this.fontSize = 14;
         this.time = 0;
         this.grid = [];
         
@@ -28,7 +28,7 @@ class MatrixPerlinBackground {
         this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
         
         // Адаптивная скорость анимации (увеличена для большей активности)
-        this.animationSpeed = this.isMobile ? 0.012 : 0.03;
+        this.animationSpeed = this.isMobile ? 0.025 : 0.06;
         
         // Настройки для пиксельного рендеринга
         this.ctx.imageSmoothingEnabled = false;
@@ -57,8 +57,9 @@ class MatrixPerlinBackground {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
         
-        this.cols = Math.floor(this.canvas.width / this.fontSize);
-        this.rows = Math.floor(this.canvas.height / this.fontSize);
+        // Увеличиваем количество колонок и строк для полного покрытия
+        this.cols = Math.ceil(this.canvas.width / this.fontSize) + 2;
+        this.rows = Math.ceil(this.canvas.height / this.fontSize) + 2;
         
         // Создаем сетку символов с начальным распределением по категориям
         this.grid = [];
@@ -261,19 +262,19 @@ class MatrixPerlinBackground {
                 let brightness = (noiseValue + 1) * 0.5;
                 
                 // Делаем символы более активными
-                brightness = Math.max(0.2, Math.min(0.9, brightness));
+                brightness = Math.max(0.3, Math.min(0.95, brightness));
                 
                 // Применяем эффекты глюков
                 const glitchEffects = this.applyGlitchEffects(x, y, brightness);
                 
                 // Создаем более активную прозрачность
-                let alpha = brightness * 0.4;
+                let alpha = brightness * 0.6;
                 
 
                 
                 // Увеличиваем смену символов для большей активности
-                const baseChangeRate = this.isMobile ? 0.0005 : 0.001;
-                const brightChangeRate = this.isMobile ? 0.002 : 0.004;
+                const baseChangeRate = this.isMobile ? 0.001 : 0.002;
+                const brightChangeRate = this.isMobile ? 0.004 : 0.008;
                 const changeRate = brightness > 0.7 ? brightChangeRate : baseChangeRate;
                 
                 // Увеличиваем вероятность смены символов только в зонах глюков
@@ -308,9 +309,9 @@ class MatrixPerlinBackground {
                 
                 this.ctx.fillStyle = color;
                 
-                // Позиция символа
-                const drawX = x * this.fontSize;
-                const drawY = y * this.fontSize;
+                // Позиция символа с небольшим смещением для полного покрытия
+                const drawX = (x - 1) * this.fontSize;
+                const drawY = (y - 1) * this.fontSize;
                 
                 this.ctx.fillText(
                     this.grid[x][y].char,

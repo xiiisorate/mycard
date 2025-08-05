@@ -1,0 +1,366 @@
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+:root {
+    --primary-beige: #d4c4a7;
+    --matrix-black: #0a0a0a;
+    --matrix-dark: #1a1a1a;
+    --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --font-display: 'Stalinist One', cursive;
+    --font-kelly: 'Kelly Slab', cursive;
+    
+}
+
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--matrix-black);
+    overflow-x: hidden;
+}
+
+/* ===== MATRIX RAIN BACKGROUND ===== */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: var(--matrix-black);
+    opacity: 0.8;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--matrix-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-beige);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b8a890;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 15px 60px 15px;
+    min-height: 100vh;
+    gap: 25px;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: fit-content;
+    max-width: 100%;
+    align-items: center;
+}
+
+.hero-profile {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.8rem, 2.5vw, 1.5rem);
+    width: clamp(400px, 70vw, 800px);
+    max-width: 100%;
+}
+
+.hero-avatar .avatar-frame {
+    width: clamp(60px, 12vw, 140px);
+    height: clamp(60px, 12vw, 140px);
+    border-radius: 0;
+    flex-shrink: 0;
+}
+
+.hero-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--primary-beige);
+    padding: clamp(0.4rem, 1.5vw, 0.8rem) clamp(0.8rem, 2.5vw, 1.5rem);
+    gap: 0.4rem;
+    flex: 1;
+    min-width: 0;
+    align-self: stretch;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 3.5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    color: var(--matrix-black);
+    margin: 0;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.hero-subtitle {
+    font-family: var(--font-kelly);
+    font-weight: 500;
+    font-size: clamp(0.6rem, 2vw, 2.8rem);
+    color: var(--matrix-black);
+    line-height: 1.3;
+    margin: 0;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.avatar-frame {
+    width: 120px;
+    height: 120px;
+    background: var(--primary-beige);
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-subtle);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    background-image: url('media/image/av.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+    background: var(--primary-beige);
+    color: var(--matrix-black);
+}
+
+::-moz-selection {
+    background: var(--primary-beige);
+    color: var(--matrix-black);
+}
+
+/* ===== SKILLS BLOCK ===== */
+.skills-block {
+    background: var(--matrix-black);
+    border: clamp(1.8px, 0.6vw, 3.5px) solid var(--primary-beige);
+    padding: clamp(0.8rem, 2.5vw, 1.5rem);
+    width: clamp(400px, 70vw, 800px);
+    max-width: 100%;
+}
+
+.skills-title {
+    font-family: var(--font-display);
+    font-size: clamp(0.8rem, 2.5vw, 2rem);
+    color: var(--primary-beige);
+    text-align: center;
+    margin-bottom: clamp(0.8rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.8rem, 3vw, 2.5rem);
+    flex-wrap: wrap;
+}
+
+.skill-item {
+    font-family: var(--font-kelly);
+    font-size: clamp(0.7rem, 2vw, 1.5rem);
+    color: var(--primary-beige);
+    background: var(--matrix-dark);
+    padding: clamp(0.4rem, 1.2vw, 0.8rem) clamp(0.8rem, 2vw, 1.5rem);
+    border: clamp(1.8px, 0.6vw, 3.5px) solid var(--primary-beige);
+    border-radius: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: clamp(0.4rem, 1.2vw, 0.8rem);
+}
+
+.skill-icon {
+    width: clamp(0.8rem, 2.5vw, 1.5rem);
+    height: clamp(0.8rem, 2.5vw, 1.5rem);
+}
+
+.skill-item:hover {
+    background: var(--primary-beige);
+    color: var(--matrix-black);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-subtle);
+}
+
+.skill-item[href] {
+    text-decoration: none;
+    color: var(--primary-beige);
+}
+
+.skill-item[href]:hover {
+    color: var(--matrix-black);
+}
+
+/* ===== CAROUSEL ===== */
+.carousel-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border: clamp(1.8px, 0.6vw, 3.5px) solid var(--primary-beige);
+    background: var(--matrix-dark);
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 соотношение (9/16 = 0.5625) */
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: var(--matrix-black);
+    border-top: clamp(1.8px, 0.6vw, 3.5px) solid var(--primary-beige);
+}
+
+.carousel-btn {
+    background: var(--matrix-dark);
+    border: clamp(1.8px, 0.6vw, 3.5px) solid var(--primary-beige);
+    color: var(--primary-beige);
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    width: clamp(40px, 8vw, 60px);
+    height: clamp(40px, 8vw, 60px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+}
+
+.carousel-btn:hover {
+    background: var(--primary-beige);
+    color: var(--matrix-black);
+    transform: translateY(-2px);
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: clamp(12px, 3vw, 20px);
+    height: clamp(12px, 3vw, 20px);
+    border: clamp(1.8px, 0.6vw, 3.5px) solid var(--primary-beige);
+    background: var(--matrix-dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: var(--primary-beige);
+}
+
+.indicator:hover {
+    background: var(--primary-beige);
+    transform: scale(1.1);
+}
+
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    border: clamp(1.8px, 0.6vw, 3.5px) solid var(--primary-beige);
+    background: var(--matrix-dark);
+}
+
+/* Курсор для изображений в карусели */
+.carousel-image {
+    cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 90vw;
+    }
+    
+    .carousel-image {
+        max-height: 300px;
+    }
+    
+    .carousel-controls {
+        padding: 10px;
+    }
+}

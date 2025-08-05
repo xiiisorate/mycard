@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Smith - Fullstack Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&family=Kelly+Slab&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Matrix Rain Background -->
+    <canvas id="matrix-canvas"></canvas>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-profile">
+                <div class="hero-avatar">
+                    <div class="avatar-frame">
+                        <div class="avatar-image"></div>
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-title">Aki Hirano</h1>
+                    <p class="hero-subtitle">Fullstack-Разработчик, Дизайнер</p>
+                </div>
+            </div>
+            <div class="skills-block">
+                <h2 class="skills-title">Мои языки программирования</h2>
+                <div class="skills-list">
+                                    <a href="https://github.com/JetBrains/kotlin" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 20H4V4h16M4 20L20 4M4 12l8-8m0 8l8 8"/></svg>
+                    <span>Kotlin</span>
+                </a>
+                                    <a href="https://github.com/python/cpython" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><g fill="currentColor" fill-rule="evenodd"><path d="M555 790.5c0 15.74 12.76 28.5 28.5 28.5s28.5-12.76 28.5-28.5s-12.76-28.5-28.5-28.5s-28.5 12.76-28.5 28.5m-143-557c0 15.74 12.76 28.5 28.5 28.5s28.5-12.76 28.5-28.5s-12.76-28.5-28.5-28.5s-28.5 12.76-28.5 28.5"/><path d="M821.524 297.714h-95.238v-95.238c0-49.905-40.572-90.476-90.476-90.476H388.19c-49.904 0-90.476 40.571-90.476 90.476v95.238h-95.238c-49.905 0-90.476 40.572-90.476 90.476v247.62c0 49.904 40.571 90.476 90.476 90.476h95.238v95.238c0 49.905 40.572 90.476 90.476 90.476h247.62c49.904 0 90.476-40.571 90.476-90.476v-95.238h95.238c49.905 0 90.476-40.572 90.476-90.476V388.19c0-49.904-40.571-90.476-90.476-90.476M202.476 669.143c-18.38 0-33.333-14.953-33.333-33.333V388.19c0-18.38 14.952-33.333 33.333-33.333h278.572c15.81 0 28.571-12.762 28.571-28.571c0-15.81-12.762-28.572-28.571-28.572h-126.19v-95.238c0-18.38 14.952-33.333 33.332-33.333h247.62c18.38 0 33.333 14.952 33.333 33.333v256.476c0 13.524-10.953 24.477-24.476 24.477H379.333c-45.047 0-81.619 36.666-81.619 81.619v104.095zm652.381-33.333c0 18.38-14.952 33.333-33.333 33.333H542.952c-15.81 0-28.571 12.762-28.571 28.571c0 15.81 12.762 28.572 28.571 28.572h126.19v95.238c0 18.38-14.952 33.333-33.332 33.333H388.19c-18.38 0-33.333-14.952-33.333-33.333V565.048c0-13.524 10.953-24.477 24.476-24.477h265.334c45.047 0 81.619-36.666 81.619-81.619V354.857h95.238c18.38 0 33.333 14.953 33.333 33.333z"/></g></svg>
+                    <span>Python</span>
+                </a>
+                                    <a href="https://github.com/microsoft/STL" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path fill="none" stroke="currentColor" d="M9.5 9.5c-.64.64-1.509 1-2.414 1H6.5a3 3 0 0 1 0-6h.586c.905 0 1.774.36 2.414 1m-2 .5v3M6 7.5h6M10.5 6v3m-9 1.5v-6l6-3.5l6 3.5v6l-6 3.5z"/></svg>
+                    <span>C++</span>
+                </a>
+                </div>
+            </div>
+        </div>
+        <div class="skills-block">
+            <h2 class="skills-title">Мои базы данных</h2>
+            <div class="skills-list">
+                <a href="https://github.com/mongodb/mongo" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path fill="currentColor" d="m7.5.5l.369-.338a.5.5 0 0 0-.738 0zm0 13l-.393.309a.5.5 0 0 0 .786 0zM4.623 9.838l-.393.31zm.246-6.467L4.5 3.032zm5.262 0l.369-.338zm.246 6.467l.393.31zM8 15V.5H7V15zm-.107-1.809L5.016 9.53l-.786.618l2.877 3.662zM5.237 3.708L7.87.838L7.13.162L4.5 3.032zM7.131.838l2.632 2.87l.737-.675L7.869.163zm2.853 8.691l-2.877 3.662l.786.618l2.877-3.662zm-.221-5.82a4.5 4.5 0 0 1 .22 5.82l.787.618a5.5 5.5 0 0 0-.27-7.114zm-4.747 5.82a4.5 4.5 0 0 1 .221-5.82L4.5 3.032a5.5 5.5 0 0 0-.27 7.114z"/></svg>
+                    <span>MongoDB</span>
+                </a>
+                <a href="https://github.com/postgres/postgres" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" d="M23.56 14.723a.5.5 0 0 0-.057-.12q-.21-.395-1.007-.231c-1.654.34-2.294.13-2.526-.02c1.342-2.048 2.445-4.522 3.041-6.83c.272-1.05.798-3.523.122-4.73a1.6 1.6 0 0 0-.15-.236C21.693.91 19.8.025 17.51.001c-1.495-.016-2.77.346-3.116.479a10 10 0 0 0-.516-.082a8 8 0 0 0-1.312-.127c-1.182-.019-2.203.264-3.05.84C8.66.79 4.729-.534 2.296 1.19C.935 2.153.309 3.873.43 6.304c.041.818.507 3.334 1.243 5.744q.69 2.26 1.433 3.582q.83 1.493 1.714 1.79c.448.148 1.133.143 1.858-.729a56 56 0 0 1 1.945-2.206c.435.235.906.362 1.39.377v.004a11 11 0 0 0-.247.305c-.339.43-.41.52-1.5.745c-.31.064-1.134.233-1.146.811a.6.6 0 0 0 .091.327c.227.423.922.61 1.015.633c1.335.333 2.505.092 3.372-.679c-.017 2.231.077 4.418.345 5.088c.221.553.762 1.904 2.47 1.904q.375.001.829-.094c1.782-.382 2.556-1.17 2.855-2.906c.15-.87.402-2.875.539-4.101c.017-.07.036-.12.057-.136c0 0 .07-.048.427.03l.044.007l.254.022l.015.001c.847.039 1.911-.142 2.531-.43c.644-.3 1.806-1.033 1.595-1.67M2.37 11.876c-.744-2.435-1.178-4.885-1.212-5.571c-.109-2.172.417-3.683 1.562-4.493c1.837-1.299 4.84-.54 6.108-.13l-.01.01C6.795 3.734 6.843 7.226 6.85 7.44c0 .082.006.199.016.36c.034.586.1 1.68-.074 2.918c-.16 1.15.194 2.276.973 3.089q.12.126.252.237c-.347.371-1.1 1.193-1.903 2.158c-.568.682-.96.551-1.088.508c-.392-.13-.813-.587-1.239-1.322c-.48-.839-.963-2.032-1.415-3.512m6.007 5.088a1.6 1.6 0 0 1-.432-.178c.089-.039.237-.09.483-.14c1.284-.265 1.482-.451 1.915-1a8 8 0 0 1 .367-.443a.4.4 0 0 0 .074-.13c.17-.151.272-.11.436-.042c.156.065.308.26.37.475c.03.102.062.295-.045.445c-.904 1.266-2.222 1.25-3.168 1.013m2.094-3.988l-.052.14c-.133.357-.257.689-.334 1.004c-.667-.002-1.317-.288-1.81-.803c-.628-.655-.913-1.566-.783-2.5c.183-1.308.116-2.447.08-3.059l-.013-.22c.296-.262 1.666-.996 2.643-.772c.446.102.718.406.83.928c.585 2.704.078 3.83-.33 4.736a9 9 0 0 0-.23.546m7.364 4.572q-.024.266-.062.596l-.146.438a.4.4 0 0 0-.018.108c-.006.475-.054.649-.115.87a4.8 4.8 0 0 0-.18 1.057c-.11 1.414-.878 2.227-2.417 2.556c-1.515.325-1.784-.496-2.02-1.221a7 7 0 0 0-.078-.227c-.215-.586-.19-1.412-.157-2.555c.016-.561-.025-1.901-.33-2.646q.006-.44.019-.892a.4.4 0 0 0-.016-.113a2 2 0 0 0-.044-.208c-.122-.428-.42-.786-.78-.935c-.142-.059-.403-.167-.717-.087c.067-.276.183-.587.309-.925l.053-.142c.06-.16.134-.325.213-.5c.426-.948 1.01-2.246.376-5.178c-.237-1.098-1.03-1.634-2.232-1.51c-.72.075-1.38.366-1.709.532a6 6 0 0 0-.196.104c.092-1.106.439-3.174 1.736-4.482a4 4 0 0 1 .303-.276a.35.35 0 0 0 .145-.064c.752-.57 1.695-.85 2.802-.833q.616.01 1.174.081c1.94.355 3.244 1.447 4.036 2.383c.814.962 1.255 1.931 1.431 2.454c-1.323-.134-2.223.127-2.68.78c-.992 1.418.544 4.172 1.282 5.496c.135.242.252.452.289.54c.24.583.551.972.778 1.256c.07.087.138.171.189.245c-.4.116-1.12.383-1.055 1.717a35 35 0 0 1-.084.815c-.046.208-.07.46-.1.766m.89-1.621c-.04-.832.27-.919.597-1.01l.135-.041a1 1 0 0 0 .134.103c.57.376 1.583.421 3.007.134c-.202.177-.519.4-.953.601c-.41.19-1.096.333-1.747.364c-.72.034-1.086-.08-1.173-.151m.57-9.271a7 7 0 0 1-.105 1.001c-.055.358-.112.728-.127 1.177c-.014.436.04.89.093 1.33c.107.887.216 1.8-.207 2.701a4 4 0 0 1-.188-.385a8 8 0 0 0-.325-.617c-.616-1.104-2.057-3.69-1.32-4.744c.38-.543 1.342-.566 2.179-.463m.228 7.013l-.085-.107l-.035-.044c.726-1.2.584-2.387.457-3.439c-.052-.432-.1-.84-.088-1.222c.013-.407.066-.755.118-1.092c.064-.415.13-.844.111-1.35a.6.6 0 0 0 .012-.19c-.046-.486-.6-1.938-1.73-3.253a7.8 7.8 0 0 0-2.688-2.04A9.3 9.3 0 0 1 17.62.746c2.052.046 3.675.814 4.824 2.283a1 1 0 0 1 .067.1c.723 1.356-.276 6.275-2.987 10.54m-8.816-6.116c-.025.18-.31.423-.621.423l-.081-.006a.8.8 0 0 1-.506-.315c-.046-.06-.12-.178-.106-.285a.22.22 0 0 1 .093-.149c.118-.089.352-.122.61-.086c.316.044.642.193.61.418m7.93-.411c.011.08-.049.2-.153.31a.72.72 0 0 1-.408.223l-.075.005c-.293 0-.541-.234-.56-.371c-.024-.177.264-.31.56-.352c.298-.042.612.009.636.185"/></svg>
+                    <span>PostgreSQL</span>
+                </a>
+                <a href="https://github.com/redis/redis" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1.75 11L8 14.25L14.25 11M1.75 8L8 11.25L14.25 8M8 1.75L1.75 5L8 8.25L14.25 5z"/></svg>
+                    <span>Redis</span>
+                </a>
+            </div>
+        </div>
+        <div class="skills-block">
+            <h2 class="skills-title">Библиотеки и фреймворки</h2>
+            <div class="skills-list">
+                <a href="https://github.com/aiogram/aiogram" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M15.5 10.071c0-2.582-1.426-4.853-3.633-6.087l1.039-1.87a.75.75 0 1 0-1.312-.728l-1.11 1.997A8.1 8.1 0 0 0 8 3a8.1 8.1 0 0 0-2.485.383l-1.11-1.997a.75.75 0 1 0-1.31.728l1.038 1.87C1.926 5.218.5 7.489.5 10.07c0 .813.169 1.603.614 2.294c.448.697 1.09 1.158 1.795 1.46C4.227 14.39 6.02 14.5 8 14.5s3.773-.11 5.09-.675c.707-.302 1.348-.763 1.796-1.46c.446-.691.614-1.481.614-2.294m-13.5 0C2 12.5 4 13 8 13s6-.5 6-2.929c0-3-2.5-5.571-6-5.571s-6 2.57-6 5.57Zm8.5 1.179a.75.75 0 0 1-.75-.75V9a.75.75 0 0 1 1.5 0v1.5a.75.75 0 0 1-.75.75m-5.75-.75a.75.75 0 0 0 1.5 0V9a.75.75 0 0 0-1.5 0z" clip-rule="evenodd"/></svg>
+                    <span>aiogram</span>
+                </a>
+                <a href="https://github.com/tiangolo/fastapi" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M13.614 2.31a.75.75 0 0 1 .456.69v6.998H18a.75.75 0 0 1 .653 1.12l-.492.87a35.748 35.748 0 0 1-7.05 8.842l-.796.725A.75.75 0 0 1 9.06 21v-6.939H5a.75.75 0 0 1-.653-1.119a35.801 35.801 0 0 1 6.675-8.773l1.778-1.71a.75.75 0 0 1 .814-.149m-7.33 10.251H9.81a.75.75 0 0 1 .75.75v5.983a34.247 34.247 0 0 0 6.153-7.796H13.32a.75.75 0 0 1-.75-.75V4.762l-.508.488a34.3 34.3 0 0 0-5.777 7.311" clip-rule="evenodd"/></svg>
+                    <span>fastapi</span>
+                </a>
+                <a href="https://github.com/pallets/flask" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><path fill="currentColor" d="M31.43 27.28L23 14.84V4h1a1 1 0 0 0 0-2H12a1 1 0 0 0 0 2h1v10.84L4.51 27.36A4.29 4.29 0 0 0 5 32.8A4.38 4.38 0 0 0 8.15 34H28a4.24 4.24 0 0 0 3.42-6.72ZM29.85 31a2.62 2.62 0 0 1-2 1H8a2.2 2.2 0 0 1-2.06-1.41a2.68 2.68 0 0 1 .29-2.17l3-4.44h14l-1.31-2H10.57L15 15.46V4h6v11.46l8.84 13.05a2.23 2.23 0 0 1 .01 2.49" class="clr-i-outline clr-i-outline-path-1"/><path fill="none" d="M0 0h36v36H0z"/></svg>
+                    <span>flask</span>
+                </a>
+                <a href="https://github.com/pyrogram/pyrogram" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.507 1.508a.75.75 0 0 1 .734-.239c3.608.829 5.433 4.783 5.003 8.321c-.166 1.376-.578 2.454-1.185 3.312l-.011.016c.138-.068.265-.141.384-.218c.592-.385 1.026-.892 1.592-1.552l.211-.246a.75.75 0 0 1 1.238.151A7.25 7.25 0 1 1 8.025 8.26l.067-.068a.75.75 0 0 1 .114-.094c.865-.583 1.487-1.06 1.906-1.62c.395-.529.638-1.175.638-2.154a5.73 5.73 0 0 0-.378-2.055a.75.75 0 0 1 .135-.76m1.664 1.743c.052.35.079.708.079 1.072c0 1.268-.328 2.237-.937 3.052c-.571.766-1.363 1.353-2.208 1.925l-.073.073a.75.75 0 0 1-.128.103a5.75 5.75 0 1 0 8.648 3.346c-.38.411-.8.809-1.303 1.136c-.924.599-2.08.941-3.749.941a.75.75 0 0 1-.362-1.407c.679-.374 1.254-.831 1.697-1.456c.44-.624.779-1.457.92-2.626c.307-2.531-.74-5.029-2.584-6.16" clip-rule="evenodd"/></svg>
+                    <span>pyrogram</span>
+                </a>
+                <a href="https://github.com/mongodb/motor" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><g fill="currentColor"><path d="M12.75 12a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-3.5 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/><path fill-rule="evenodd" d="M10 7a3 3 0 1 0 0-6a3 3 0 0 0 0 6m0-5a2 2 0 1 1 0 4a2 2 0 0 1 0-4m.5 12h-1A1.5 1.5 0 0 0 8 15.5v2A1.5 1.5 0 0 0 9.5 19h1a1.5 1.5 0 0 0 1.5-1.5v-2a1.5 1.5 0 0 0-1.5-1.5M9 15.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" clip-rule="evenodd"/><path d="M15.5 3.75a.75.75 0 0 1 0-1.5h2a.75.75 0 0 1 0 1.5zm-13 0a.75.75 0 0 1 0-1.5h2a.75.75 0 0 1 0 1.5z"/><path d="m4.106 3.364l.302-.97l3.698.742l-.302.97zm7.788-.228l.302.97l3.698-.742l-.302-.97z"/><path fill-rule="evenodd" d="M14.5 10.5a4.5 4.5 0 1 0-9 0V13a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2zm-8 0a3.5 3.5 0 1 1 7 0V13a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1z" clip-rule="evenodd"/></g></svg>
+                    <span>motor</span>
+                </a>
+                <a href="https://github.com/mongodb/mongo-python-driver" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 2048 2048"><path fill="currentColor" d="M128 896q52 0 99-20t81-55t55-81t21-100q0-71-3-142t4-138t32-131t79-117q54-54 125-83T768 0v128q-53 0-99 20t-81 55t-55 82t-21 99q0 56 2 110t1 107t-10 102t-27 95t-52 86t-85 76q52 35 85 76t52 86t27 94t9 102t0 107t-2 111q0 53 20 99t55 81t81 55t100 21v128q-76 0-147-29t-125-83t-78-117t-32-130t-5-139t3-142q0-52-20-99t-55-81t-82-55t-99-21zM1280 0q76 0 147 29t125 83t78 117t32 130t5 139t-3 142q0 53 20 99t55 81t81 55t100 21v128q-53 0-99 20t-81 55t-55 82t-21 99q0 71 3 142t-4 138t-32 131t-79 117q-54 54-125 83t-147 29v-128q52 0 99-20t81-55t55-81t21-100q0-56-2-110t-1-107t10-102t27-95t52-86t85-76q-52-35-85-76t-52-86t-27-94t-9-102t0-107t2-111q0-52-20-99t-55-81t-82-55t-99-21z"/></svg>
+                    <span>pymongo</span>
+                </a>
+                <a href="https://github.com/sqlalchemy/sqlalchemy" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><path fill="currentColor" d="M832 64H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32m-600 72h560v208H232zm560 480H232V408h560zm0 272H232V680h560zM304 240a40 40 0 1 0 80 0a40 40 0 1 0-80 0m0 272a40 40 0 1 0 80 0a40 40 0 1 0-80 0m0 272a40 40 0 1 0 80 0a40 40 0 1 0-80 0"/></svg>
+                    <span>sqlalchemy</span>
+                </a>
+                <a href="https://github.com/omnilib/aiosqlite" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M40.764 11.363c0 3.32-7.448 5.977-16.764 5.977S7.236 14.684 7.236 11.363C7.502 8.166 14.826 5.5 23.867 5.5c9.184 0 16.631 2.656 16.897 5.863M7.236 36.627V11.354m33.528 8.52c0 3.32-7.448 5.986-16.764 5.986S7.236 23.203 7.236 19.883m33.528 8.244c0 3.32-7.447 5.977-16.764 5.977S7.236 31.448 7.236 28.127m33.528 8.51c0 3.197-7.447 5.863-16.764 5.863S7.237 39.834 7.237 36.637m33.527 0V11.354"/></svg>
+                    <span>aiosqlite</span>
+                </a>
+            </div>
+        </div>
+        <div class="skills-block">
+            <h2 class="skills-title">Инструменты для дизайна</h2>
+            <div class="skills-list">
+                <a href="https://www.figma.com" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none"><g clip-path="url(#akarIconsFigmaFill0)"><path fill="currentColor" fill-rule="evenodd" d="M8.415 0C5.968 0 4 2.053 4 4.568c0 1.529.728 2.887 1.847 3.716A4.613 4.613 0 0 0 4 12c0 1.53.728 2.887 1.847 3.716A4.613 4.613 0 0 0 4 19.432C4 21.947 5.968 24 8.415 24c2.446 0 4.415-2.053 4.415-4.568V15.57a4.307 4.307 0 0 0 2.755.999C18.032 16.568 20 14.515 20 12a4.61 4.61 0 0 0-1.847-3.716A4.613 4.613 0 0 0 20 4.568C20 2.053 18.032 0 15.585 0zM5.659 4.568c0-1.591 1.242-2.865 2.756-2.865h2.755v5.73H8.415c-1.514 0-2.756-1.275-2.756-2.865m9.926 2.864H12.83v-5.73h2.755c1.515 0 2.756 1.275 2.756 2.866c0 1.59-1.241 2.864-2.756 2.864M5.66 12c0-1.59 1.242-2.865 2.756-2.865h2.755v5.73H8.415C6.9 14.865 5.659 13.59 5.659 12m7.17 0c0-1.59 1.242-2.865 2.756-2.865c1.515 0 2.756 1.274 2.756 2.865c0 1.59-1.241 2.865-2.756 2.865c-1.514 0-2.755-1.274-2.755-2.865m-7.17 7.432c0-1.59 1.242-2.864 2.756-2.864h2.755v2.864c0 1.591-1.24 2.865-2.755 2.865c-1.514 0-2.756-1.274-2.756-2.865" clip-rule="evenodd"/></g><defs><clipPath id="akarIconsFigmaFill0"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></g></svg>
+                    <span>Figma</span>
+                </a>
+                <a href="https://pixellab.com" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M10.46 43.5v-39m7.74 39v-39m0 23.4h7.64a11.7 11.7 0 0 0 0-23.4H10.46"/></svg>
+                    <span>Pixellab</span>
+                </a>
+            </div>
+        </div>
+        <div class="skills-block">
+            <h2 class="skills-title">Мои дизайны</h2>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slide active">
+                        <img src="media/image/design/1.png" alt="Дизайн 1" class="carousel-image" onclick="openModal(this.src)">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="media/image/design/2.png" alt="Дизайн 2" class="carousel-image" onclick="openModal(this.src)">
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn" onclick="manualSlideChange((currentSlide - 1 + slides.length) % slides.length)">‹</button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active" onclick="manualSlideChange(0)"></span>
+                        <span class="indicator" onclick="manualSlideChange(1)"></span>
+                    </div>
+                    <button class="carousel-btn next-btn" onclick="manualSlideChange((currentSlide + 1) % slides.length)">›</button>
+                </div>
+            </div>
+        </div>
+        <div class="skills-block">
+            <h2 class="skills-title">Связаться</h2>
+            <div class="skills-list">
+                <a href="https://XIIISORATE.t.me" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M26.07 3.996a2.974 2.974 0 0 0-.933.223h-.004c-.285.113-1.64.683-3.7 1.547l-7.382 3.109c-5.297 2.23-10.504 4.426-10.504 4.426l.062-.024s-.359.118-.734.375a2.03 2.03 0 0 0-.586.567c-.184.27-.332.683-.277 1.11c.09.722.558 1.155.894 1.394c.34.242.664.355.664.355h.008l4.883 1.645c.219.703 1.488 4.875 1.793 5.836c.18.574.355.933.574 1.207c.106.14.23.257.379.351a1.119 1.119 0 0 0 .246.106l-.05-.012c.015.004.027.016.038.02c.04.011.067.015.118.023c.773.234 1.394-.246 1.394-.246l.035-.028l2.883-2.625l4.832 3.707l.11.047c1.007.442 2.027.196 2.566-.238c.543-.437.754-.996.754-.996l.035-.09l3.734-19.129c.106-.472.133-.914.016-1.343a1.807 1.807 0 0 0-.781-1.047a1.872 1.872 0 0 0-1.067-.27m-.101 2.05c-.004.063.008.056-.02.177v.011l-3.699 18.93c-.016.027-.043.086-.117.145c-.078.062-.14.101-.465-.028l-5.91-4.531l-3.57 3.254l.75-4.79l9.656-9c.398-.37.265-.448.265-.448c.028-.454-.601-.133-.601-.133l-12.176 7.543l-.004-.02l-5.836-1.965v-.004l-.015-.003a.27.27 0 0 0 .03-.012l.032-.016l.031-.011s5.211-2.196 10.508-4.426c2.652-1.117 5.324-2.242 7.379-3.11a807.312 807.312 0 0 1 3.66-1.53c.082-.032.043-.032.102-.032z"/></svg>
+                    <span>Telegram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно для просмотра изображений -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <img id="modalImage" class="modal-content" onclick="event.stopPropagation()">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,3 +1,22 @@
+// ===== LOADING SCREEN =====
+function hideLoadingScreen() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        loadingScreen.classList.add('hidden');
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500);
+    }
+}
+
+function showLoadingScreen() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        loadingScreen.style.display = 'flex';
+        loadingScreen.classList.remove('hidden');
+    }
+}
+
 // ===== MATRIX PERLIN NOISE BACKGROUND =====
 class MatrixPerlinBackground {
     constructor() {
@@ -415,21 +434,7 @@ function startAutoSlide() {
     }, 5000);
 }
 
-// Инициализация карусели после загрузки DOM
-document.addEventListener('DOMContentLoaded', () => {
-    // Core functionality
-    const matrixBackground = new MatrixPerlinBackground();
-    window.matrixBackground = matrixBackground;
-    
-    // Инициализация карусели
-    slides = document.querySelectorAll('.carousel-slide');
-    indicators = document.querySelectorAll('.indicator');
-    
-    if (slides.length > 0) {
-        showSlide(0);
-        startAutoSlide();
-    }
-});
+
 
 // ===== MODAL FUNCTIONS =====
 function openModal(imageSrc) {
@@ -474,4 +479,64 @@ document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeModal();
     }
+});
+
+// ===== LOADING LOGIC =====
+function preloadImages() {
+    const imageUrls = [
+        'media/image/av.png',
+        'media/image/design/1.png',
+        'media/image/design/2.png'
+    ];
+    
+    const imagePromises = imageUrls.map(url => {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(url);
+            img.onerror = () => reject(url);
+            img.src = url;
+        });
+    });
+    
+    return Promise.all(imagePromises);
+}
+
+function initializeApp() {
+    // Инициализируем матричный фон
+    const matrixBackground = new MatrixPerlinBackground();
+    window.matrixBackground = matrixBackground;
+    
+    // Инициализация карусели
+    slides = document.querySelectorAll('.carousel-slide');
+    indicators = document.querySelectorAll('.indicator');
+    
+    if (slides.length > 0) {
+        showSlide(0);
+        startAutoSlide();
+    }
+    
+    // Скрываем экран загрузки
+    hideLoadingScreen();
+}
+
+// Запускаем загрузку при загрузке DOM
+document.addEventListener('DOMContentLoaded', () => {
+    // Показываем экран загрузки
+    showLoadingScreen();
+    
+    // Загружаем изображения и инициализируем приложение
+    preloadImages()
+        .then(() => {
+            // Небольшая задержка для плавности
+            setTimeout(() => {
+                initializeApp();
+            }, 500);
+        })
+        .catch((error) => {
+            console.warn('Some images failed to load:', error);
+            // Все равно инициализируем приложение
+            setTimeout(() => {
+                initializeApp();
+            }, 500);
+        });
 });

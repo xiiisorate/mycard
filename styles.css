@@ -5,39 +5,6 @@
     box-sizing: border-box;
 }
 
-/* ===== LOADING SCREEN ===== */
-.loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--matrix-black);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease-out;
-}
-
-.loading-screen.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.loading-spinner {
-    width: 50px;
-    height: 50px;
-    border: 3px solid var(--matrix-dark);
-    border-top: 3px solid var(--primary-beige);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
 
 
 :root {
@@ -99,7 +66,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px 15px 60px 15px;
+    padding: 100px 15px 60px 15px;
     min-height: 100vh;
     gap: 25px;
 }
@@ -300,29 +267,6 @@ body {
     height: 100%;
     object-fit: contain;
     border-radius: 0;
-    background: var(--matrix-dark);
-    min-height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-beige);
-    font-family: var(--font-kelly);
-    font-size: 1rem;
-}
-
-.carousel-image:not([src]), .carousel-image[src=""] {
-    position: relative;
-}
-
-.carousel-image:not([src])::after, .carousel-image[src=""]::after {
-    content: "Загрузка...";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--primary-beige);
-    font-family: var(--font-kelly);
-    font-size: 1rem;
 }
 
 .carousel-controls {

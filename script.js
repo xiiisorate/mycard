@@ -445,8 +445,12 @@ function openModal(imageSrc) {
     const activeSlide = document.querySelector('.carousel-slide.active');
     const activeImage = activeSlide ? activeSlide.querySelector('.carousel-image') : null;
     
-    // Используем изображение из активного слайда, а не переданный src
-    const correctImageSrc = activeImage ? activeImage.src : imageSrc;
+    // Используем изображение из активного слайда, учитывая lazy loading
+    let correctImageSrc = imageSrc;
+    if (activeImage) {
+        // Проверяем, загружено ли изображение или есть data-src
+        correctImageSrc = activeImage.src || activeImage.getAttribute('data-src') || imageSrc;
+    }
     
     modalImage.src = correctImageSrc;
     modal.style.display = 'flex';
@@ -484,9 +488,7 @@ document.addEventListener('keydown', function(event) {
 // ===== LOADING LOGIC =====
 function preloadImages() {
     const imageUrls = [
-        'media/image/av.png',
-        'media/image/design/1.png',
-        'media/image/design/2.png'
+        'media/image/av.png'
     ];
     
     const imagePromises = imageUrls.map(url => {
@@ -499,6 +501,37 @@ function preloadImages() {
     });
     
     return Promise.all(imagePromises);
+}
+
+function initializeLazyLoading() {
+    // Находим все изображения дизайнов
+    const designImages = document.querySelectorAll('.carousel-image');
+    
+    // Создаем Intersection Observer для lazy loading
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                const src = img.getAttribute('data-src');
+                
+                if (src) {
+                    img.src = src;
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
+                }
+            }
+        });
+    }, {
+        rootMargin: '50px' // Начинаем загружать за 50px до появления
+    });
+    
+    // Добавляем изображения под наблюдение
+    designImages.forEach(img => {
+        const src = img.src;
+        img.setAttribute('data-src', src);
+        img.src = ''; // Очищаем src
+        imageObserver.observe(img);
+    });
 }
 
 function initializeApp() {
@@ -515,6 +548,9 @@ function initializeApp() {
         startAutoSlide();
     }
     
+    // Инициализируем lazy loading для изображений дизайнов
+    initializeLazyLoading();
+    
     // Скрываем экран загрузки
     hideLoadingScreen();
 }
@@ -524,19 +560,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Показываем экран загрузки
     showLoadingScreen();
     
-    // Загружаем изображения и инициализируем приложение
+    // Загружаем только аватарку и инициализируем приложение
     preloadImages()
         .then(() => {
             // Небольшая задержка для плавности
             setTimeout(() => {
                 initializeApp();
-            }, 500);
+            }, 300);
         })
         .catch((error) => {
-            console.warn('Some images failed to load:', error);
+            console.warn('Avatar failed to load:', error);
             // Все равно инициализируем приложение
             setTimeout(() => {
                 initializeApp();
-            }, 500);
+            }, 300);
         });
 });

@@ -300,6 +300,29 @@ body {
     height: 100%;
     object-fit: contain;
     border-radius: 0;
+    background: var(--matrix-dark);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-beige);
+    font-family: var(--font-kelly);
+    font-size: 1rem;
+}
+
+.carousel-image:not([src]), .carousel-image[src=""] {
+    position: relative;
+}
+
+.carousel-image:not([src])::after, .carousel-image[src=""]::after {
+    content: "Загрузка...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-beige);
+    font-family: var(--font-kelly);
+    font-size: 1rem;
 }
 
 .carousel-controls {

@@ -415,6 +415,47 @@ function startAutoSlide() {
     }, 5000);
 }
 
+// ===== LOADING SCREEN FUNCTIONS =====
+function hideLoadingScreen() {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        loadingScreen.classList.add('hidden');
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500);
+    }
+}
+
+function checkIfPageLoaded() {
+    // Проверяем загрузку аватарки
+    const avatarImage = document.querySelector('.avatar-image');
+    if (avatarImage) {
+        const img = new Image();
+        img.onload = function() {
+            // Аватарка загружена, скрываем экран загрузки
+            setTimeout(() => {
+                hideLoadingScreen();
+            }, 1000); // Небольшая задержка для стабильности
+        };
+        img.onerror = function() {
+            // Если аватарка не загрузилась, все равно скрываем экран через 3 секунды
+            setTimeout(() => {
+                hideLoadingScreen();
+            }, 3000);
+        };
+        // Получаем URL аватарки из CSS
+        const computedStyle = window.getComputedStyle(avatarImage);
+        const backgroundImage = computedStyle.backgroundImage;
+        const imageUrl = backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
+        img.src = imageUrl;
+    } else {
+        // Если аватарка не найдена, скрываем экран через 2 секунды
+        setTimeout(() => {
+            hideLoadingScreen();
+        }, 2000);
+    }
+}
+
 // Инициализация карусели после загрузки DOM
 document.addEventListener('DOMContentLoaded', () => {
     // Core functionality
@@ -429,6 +470,9 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(0);
         startAutoSlide();
     }
+    
+    // Проверяем загрузку страницы
+    checkIfPageLoaded();
 });
 
 // ===== MODAL FUNCTIONS =====
